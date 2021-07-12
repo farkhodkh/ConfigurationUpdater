@@ -1,6 +1,6 @@
 # ConfigurationUpdater
 
-Application is made for dimonstating android (Kotlin) skill
+Application is made for demonstrating android (Kotlin) skill
 Spec:
 The application is designed to read the configuration file from the local storage. Files are read at a specified interval in the background. The readed data is saved to the local database
 
