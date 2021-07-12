@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ConfigurationUpdater</string>
+    <string name="menu_option_home">Home</string>
+    <string name="menu_option_settings">Settings</string>
+    <string name="file_extension_xml" translatable="false">xml</string>
+    <string name="browse_folder">/Share/TEM</string>
+    <string name="save">Save</string>
+    <string name="invoke_all_text">Invoke all configurations</string>
+    <string name="browse_text">Browse</string>
+    <string name="upload_result_text">Upload result</string>
+    <string name="path_text">Path</string>
+    <string name="question_online_pin">Enter password</string>
+    <string name="configuration_update_interval">Configuration update interval</string>
+    <string name="invocation_interval">Invocation interval</string>
+    <string name="service_state">Service state</string>
+</resources>

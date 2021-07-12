@@ -1,0 +1,18 @@
+<Configurations>
+    <configurationUpdateInterval parameter="configurationUpdateInterval">0</configurationUpdateInterval>
+    <configurationInvocationInterval parameter="configurationInvocationInterval">1</configurationInvocationInterval>
+    <deleteAllConfigurations parameter="deleteAllConfigurations">1</deleteAllConfigurations>
+    <deleteConfigurations parameter="deleteConfigurations">
+        <serialNumber parameter="serialNumber">INGE0020</serialNumber>
+    </deleteConfigurations>
+    <availableConfigurations parameter="availableConfigurations">
+        <serialNumber parameter="serialNumber">INGE0600</serialNumber>
+        <serverUrl parameter="serverUrl">http://dev.farkhodkhaknazarov.com/tem/pos</serverUrl>
+        <mutualTls parameter="mutualTls">0</mutualTls>
+        <keyOption parameter="keyOption">0</keyOption>
+        <clientKey parameter="clientKey"></clientKey>
+        <clientKeyPassword parameter="clientKeyPassword"></clientKeyPassword>
+        <trustCa parameter="trustCa"></trustCa>
+        <trustCaPassword parameter="trustCaPassword"></trustCaPassword>
+    </availableConfigurations>
+</Configurations>

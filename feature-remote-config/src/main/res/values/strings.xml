@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">feature-remote-config</string>
+    <string name="browse_folder">/Share/TEM</string>
+</resources>

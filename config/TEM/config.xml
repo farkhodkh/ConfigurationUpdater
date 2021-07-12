@@ -1,0 +1,50 @@
+<template xmlns="http://www.farkhodkhaknazarov.com/ingestate/paramTemplate" id="configurations-params-template" name="Configurations Parameters Template" description="Configurations Parameters Template" version="0001">
+	<fields>
+		<booleanField id="deleteAllConfigurations" name="Delete all configurations" description="All existing configurations will be deleted before download" access="READWRITE" trueValue="1" falseValue="0" defaultState="false"/>
+		<structureField id="availableConfigurations" name="Configurations table" description="List of availablle configurations" access="READWRITE" minRows="0" maxRows="65535" mandatory="false">
+			<dataField id="serialNumber" name="Terminal signature" description="Terminal signature" type="alphanumeric" access="READWRITE" defaultValue="" mandatory="false"/>
+			<dataField id="serverUrl" name="Request url of TEM server" description="Request url of TEM server" type="alphanumeric" access="READWRITE" defaultValue="" mandatory="false"/>
+			<choiceField id="mutualTls" name="Mutual TLS option, turn on/off mutual TLS" description="Mutual TLS option, turn on/off mutual TLS" type="SINGLE" defaultValue="0" access="READWRITE">
+				<choiceValue label="Turn on" value="0"/>
+				<choiceValue label="Turn off" value="1"/>
+			</choiceField>
+			<choiceField id="keyOption" name="SSL option of mutual TLS" description="Affected only when mutual TLS option is true" type="SINGLE" defaultValue="0" access="READWRITE">
+				<choiceValue label="Use vendor SSL" value="0"/>
+				<choiceValue label="Use customer SSL" value="1"/>
+			</choiceField>	
+			<dataField id="clientKey" name="Client certificate" description="Client certificate key of mutual TLS, in PKCS12 format, affected only when mutual TLS option is true" type="alphanumeric" access="READWRITE" defaultValue="" mandatory="false"/>
+			<dataField id="clientKeyPassword" name="Password client certificate" description="Password client certificate" type="alphanumeric" access="READWRITE" defaultValue="" mandatory="false"/>
+		</structureField>	
+	</fields>
+	<layout>
+		<container name="Configurations" type="TAB" description="Configurations parameters">
+			<separatorLayout text="Delete configurations"/>
+			<fieldLayout fieldId="deleteAllConfigurations" type="CHECKBOX"/>
+			<separatorLayout text="Add configurations"/>
+			<structureLayout fieldId="availableConfigurations">
+				<fieldLayout fieldId="serialNumber" type="TEXT"/>
+				<fieldLayout fieldId="serverUrl" type="TEXT"/>
+				<fieldLayout fieldId="mutualTls" type="RADIOBUTTON"/>
+				<fieldLayout fieldId="keyOption" type="RADIOBUTTON"/>
+				<fieldLayout fieldId="clientKey" type="TEXTAREA" rows="150" wordWrap="true" upload="true"/>
+				<fieldLayout fieldId="clientKeyPassword" type="MASKEDTEXT"/>				
+			</structureLayout>		
+		</container>
+	</layout>
+	<output>
+		<xmlParamFile destination="configurations-params-template.xml">
+			<freeOutput output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;"/>
+			<freeOutput output="&lt;Configurations&gt;"/>
+			<fieldOutput fieldId="deleteAllConfigurations" fieldTag="deleteAllConfigurations"/>		
+			<structureOutput fieldId="availableConfigurations" tagPerLine="true" fieldTag="availableConfigurations">
+				<fieldOutput fieldId="serialNumber" fieldTag="serialNumber"/>
+				<fieldOutput fieldId="serverUrl" fieldTag="serverUrl"/>
+				<fieldOutput fieldId="mutualTls" fieldTag="mutualTls"/>
+				<fieldOutput fieldId="keyOption" fieldTag="keyOption"/>
+				<fieldOutput fieldId="clientKey" fieldTag="clientKey"/>
+				<fieldOutput fieldId="clientKeyPassword" fieldTag="clientKeyPassword"/>				
+			</structureOutput>
+			<freeOutput output="&lt;/Configurations&gt;"/>
+		</xmlParamFile>
+	</output>
+</template>
