@@ -2,7 +2,7 @@
 
 Application is made for dimonstating android (Kotlin) skill
 Spec:
-The application is designed to read the configuration file from the local storage. Files are read at a specified interval in the background. The read data is saved to the local database
+The application is designed to read the configuration file from the local storage. Files are read at a specified interval in the background. The readed data is saved to the local database
 
 Useb libraries:
 1. Material design, Dialog
